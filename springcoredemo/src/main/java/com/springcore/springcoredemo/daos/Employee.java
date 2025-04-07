@@ -5,11 +5,11 @@ import org.apache.catalina.core.ApplicationContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Employee {
 
-    @Autowired
-    private ApplicationContext context;
+   // @Autowired
+   // private ApplicationContext context;
     private String name;
     private int id;
     private String phoneNumber;
@@ -36,5 +36,12 @@ public class Employee {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    private Employee(){
+        super();
+    }
+    public static Employee createInstance(){
+        return new Employee();
     }
 }

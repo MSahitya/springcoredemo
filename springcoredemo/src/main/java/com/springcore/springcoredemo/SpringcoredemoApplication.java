@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication//@ComponentScan+@Configuration
 public class SpringcoredemoApplication {
@@ -33,3 +35,15 @@ public class SpringcoredemoApplication {
 	}
 
 }
+
+//THis one will be useful when the Component class has private Constructor's
+@Configuration
+class NewInstance{
+	@Bean
+	public Employee getInstance(){
+		return Employee.createInstance();
+	}
+}
+
+
+
